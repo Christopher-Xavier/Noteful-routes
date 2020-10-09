@@ -1,0 +1,58 @@
+## Build 3 basic components for 3 routes based on the following:
+  - main route
+  - dynamic folder route
+  - dynamic note route
+
+## Each route should have:
+  - header 
+    - every route will have the same header
+    - the apps title should be a link to the main route
+  - main section
+  - side bar
+
+# Main Route
+  - should be displayed when the path is '/'
+  - use stock header
+  - main section will display all notes
+    - each note displays its name and modified date
+    - there should be a button to add a new note
+  - sidebar displays a list of all folders with none selected
+    - there should be a button to add a new folder
+
+# Dynamic Folder Route
+  - displayed when path is '/folder/<with-a-folder-id-here>'
+  - folder-id will reference an id of one of the folders in the state
+  - use stock header
+  - main section will display all notes in selected folder
+    - there should be a button to add a new note
+  - sidebar will display folder list with selected folder highlighted
+    - there should be a button to add a new folder
+
+# Dynamic Note Route
+  - should be displayed when path is /note/<with-a-note-id-here>
+  - note-id will fererence one of the notes in state
+  - use stock header
+  - main section will display:
+    - the currently selected notes name
+    - modified date 
+    - and content
+  - side bar will display:
+    - the folder of the currently selected notes
+    - a "back" button
+
+# Components 
+  - MainRoute
+  - Dynamic Folder Route
+  - Dynamic Note Route
+
+  - Header
+  - SideBar
+    - FolderList
+    - Fodler
+    - BackButton(will include folder title)
+  - MainSection
+    - NoteList
+    - Note
+    - NoteDescription
+
+
