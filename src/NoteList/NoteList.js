@@ -49,11 +49,13 @@ export default class NoteList extends React.Component {
   render() {
     const { notes } = this.context;
     let noteList = [];
+    let selectedId = this.props.match.params.folderId;
 
-    if (this.props.match.params.folderId) {
-      noteList = notes
-        .filter(note => note.folder_id === this.props.match.params.folderId)
-        .map(note => {
+    if (selectedId) {
+    
+      noteList = notes.filter(note => note.folder_id === Number(selectedId));
+      
+      noteList = noteList.map(note => {
           return <Note
             key={note.id}
             history={this.props.history}
@@ -62,6 +64,7 @@ export default class NoteList extends React.Component {
             dateMod={note.date_created}
           />
         })
+        
     } else {
       noteList = notes.map(note => {
         return <Note
